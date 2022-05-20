@@ -16,7 +16,6 @@ gitlab은 private 가능한데 github는 public으로 해야 pages 설정이 가
 
 참고 사이트
 [hugo official](https://hugo.io) - 휴고 공식 사이트  
-
 `homebrew`를 이용하여 설치한다.
 
 ```shell
