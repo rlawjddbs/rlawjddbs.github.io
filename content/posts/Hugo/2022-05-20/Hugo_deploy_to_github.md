@@ -6,7 +6,7 @@ draft: false
 
 # 1. Github 프로젝트 생성
 
-![Github 프로젝트 생성](posts/Hugo/2022-05-20/images/create.png)  
+![Github 프로젝트 생성](posts/Hugo/2022-05-20/images/create.png)   
 
 - Project name: `닉네임`.github.io
 gitlab은 private 가능한데 github는 public으로 해야 pages 설정이 가능하다.. 무료 사용자 기준
