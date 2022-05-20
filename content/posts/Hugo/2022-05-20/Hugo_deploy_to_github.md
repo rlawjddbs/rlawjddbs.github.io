@@ -3,7 +3,6 @@ title: "Github pages 변경"
 date: 2022-05-20T21:11:27+09:00
 draft: false
 ---
-
 # 1. Github 프로젝트 생성
 
 ![Github 프로젝트 생성](posts/Hugo/2022-05-20/images/create.png)   
