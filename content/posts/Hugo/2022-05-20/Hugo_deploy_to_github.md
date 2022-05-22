@@ -2,6 +2,7 @@
 title: "Github pages 변경"
 date: 2022-05-20T21:11:27+09:00
 draft: false
+categories: ["Hugo"]
 ---
 # 1. Github 프로젝트 생성
 
