@@ -18,3 +18,6 @@ BEGIN
 END;
 /
 ```
+
+- `IN`: in parameter, 외부값(내부, 값을 저장X)
+- `OUT`: out parameter, 내부값(외부, 값을 저장O)
