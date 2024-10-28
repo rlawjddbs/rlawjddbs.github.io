@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {{ $pages := .Data.Pages }}
+    {{ partial "head.html" . }}
+
+    <body>
+
+        {{ partial "header.html" . }}
+
+        <main class="main">
+
+            <header class="page-header">
+                <h1>Categories</h1>
+            </header>
+
+            <ul class="terms-tags">
+                {{ range $pages }}
+                    <li>
+                        {{/* Hugo의 context(.)는 반복문 내에서 현재 회차에 해당되는 요소를 의미하게 된다. 이럴때 $.Data... 처럼 $. 를 붙이면 전역 context에 접근할 수 있다. */}}
+                        <a href="{{ .Permalink }}">{{ .Title }}<sup><strong><sup>{{ len (index $.Data.OrderedIndex (lower (.Title))) }}</sup></strong></sup></a>
+                    </li>
+                {{ end }}
+            </ul>
+            
+            {{ partial "footer.html" . }}
+
+        </main>
+    </body>
+
+</html>
