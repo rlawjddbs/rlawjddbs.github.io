@@ -1,1 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Maven on dbs blog</title><link>https://rlawjddbs.github.io/tags/maven/</link><description>Recent content in Maven on dbs blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 24 Jun 2022 11:33:12 +0900</lastBuildDate><atom:link href="https://rlawjddbs.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml"/><item><title>Maven Dependency scope</title><link>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</link><pubDate>Fri, 24 Jun 2022 11:33:12 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</guid><description>compile 컴파일 할 경우 필요 runtime 런타임 때 필요 provided 컴파일 때 필요하긴 하지만 런타임 때는 JDK, 또는 컨테이너가 제공 서블릿이나 JSP 관련 API 같은 것 즉 WAS에서 제공하는 servlet-api.jar를 사용하는 경우에 해당 만약 운영환경에서 servlet-api.jar 중복으로 인한 문제가 발생한다면 꼭 provided로 바꿔줘야 함 system system은 provided와 유사하지만 JAR 파일을 직접 사용 이 때는 JAR 파일의 위치를 지정하는 systemPath 속성을 지정해야함!!! ex(pom.xml) ... &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;...&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;...&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;...&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;...&amp;lt;/scope&amp;gt; &amp;lt;systemPath&amp;gt;...&amp;lt;/systemPath&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; .</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Maven on dbs blog</title><link>https://rlawjddbs.github.io/tags/maven/</link><description>Recent content in Maven on dbs blog</description><generator>Hugo -- 0.136.5</generator><language>en-us</language><lastBuildDate>Fri, 24 Jun 2022 11:33:12 +0900</lastBuildDate><atom:link href="https://rlawjddbs.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml"/><item><title>Maven Dependency scope</title><link>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</link><pubDate>Fri, 24 Jun 2022 11:33:12 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</guid><description>&lt;h2 id="compile">compile&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>컴파일&lt;/code> 할 경우 필요&lt;/li>
+&lt;/ul>
+&lt;h2 id="runtime">runtime&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>런타임&lt;/code> 때 필요&lt;/li>
+&lt;/ul>
+&lt;h2 id="provided">provided&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>컴파일&lt;/code> 때 필요하긴 하지만 &lt;code>런타임&lt;/code> 때는 &lt;code>JDK&lt;/code>, 또는 &lt;code>컨테이너&lt;/code>가 제공&lt;/li>
+&lt;li>&lt;code>서블릿&lt;/code>이나 &lt;code>JSP 관련 API&lt;/code> 같은 것&lt;/li>
+&lt;li>즉 &lt;code>WAS&lt;/code>에서 제공하는 &lt;code>servlet-api.jar&lt;/code>를 사용하는 경우에 해당&lt;/li>
+&lt;li>만약 &lt;code>운영환경&lt;/code>에서 servlet-api.jar 중복으로 인한 문제가 발생한다면 꼭 &lt;code>provided&lt;/code>로 바꿔줘야 함&lt;/li>
+&lt;/ul>
+&lt;h2 id="system">system&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>system&lt;/code>은 provided와 유사하지만 &lt;strong>&lt;code>JAR 파일&lt;/code>을 직접 사용&lt;/strong>&lt;/li>
+&lt;li>이 때는 JAR 파일의 위치를 지정하는 systemPath 속성을 지정해야함!!!&lt;/li>
+&lt;/ul>
+&lt;h3 id="expomxml">ex(pom.xml)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

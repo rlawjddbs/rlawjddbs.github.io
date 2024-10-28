@@ -1,8 +1,202 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on dbs blog</title><link>https://rlawjddbs.github.io/posts/</link><description>Recent content in Posts on dbs blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 07 May 2024 09:59:27 +0900</lastBuildDate><atom:link href="https://rlawjddbs.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>PL/SQL1-변수, 연산자, 제어문</title><link>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</link><pubDate>Wed, 27 Jul 2022 13:53:00 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</guid><description>PL/SQL Procedural Language DBMS에서 제공하는 언어적인 요소 1. 작성구조 DECLARE 변수선언 BEGIN 코드작성 END; / PL/SQL 코드의 끝은 항상 슬래쉬/로 끝이 나야함 2. 저장 형식 파일명.sql 3. 실행 cmd/편집기 → @파일명.sql error 발생: 왜? 4. 화면출력 sqlplus -- 계정연결 set serveroutput on -- 출력설정 dbms_output.put_line(출력할 내용); -- 출력 후 줄 변경 dbms_output.put(출력할 내용) -- 출력 후 줄 변경 X 출력할 내용에는 변수, 문자열, 연산식, &amp;lsquo;문자열&amp;rsquo; 등등이 들어감</description></item><item><title>MyBatis에서 오라클 Procedure, Function 호출 및 반환값 받기</title><link>https://rlawjddbs.github.io/posts/mybatis/2022-07-21/mybatis_with_oracle_procedure_and_function/</link><pubDate>Thu, 21 Jul 2022 19:03:31 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/mybatis/2022-07-21/mybatis_with_oracle_procedure_and_function/</guid><description>[프로시저에 대한 약식 설명]
-1. 프로시저 생성하기 create or replace (EDITIONABLE||NONEDITIONABLE) PROCEDURE GET_CODE_LIST ( IN_PARAM IN CLOB, OUT_CURSOR OUT SYS_REFCURSOR ) IS P_GRP_CD VARCHAR(30) := JSON_VALUE(IN_PARAM, &amp;#39;$.GRP_CD&amp;#39;); BEGIN OPEN OUT_CURSOR FOR SELECT DATA_CD, DATA_NM, GRP_CD FROM SYS_CD_MGMT WHERE GRP_CD = P_GRP_CD; END GET_CODE_LIST; EDITIONABLE || NONEDITIONABLE 옵션:</description></item><item><title>명렴프롬프트_관리자실행</title><link>https://rlawjddbs.github.io/posts/windows/2022-07-14/%EB%AA%85%EB%A0%B4%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EA%B4%80%EB%A6%AC%EC%9E%90%EC%8B%A4%ED%96%89/</link><pubDate>Thu, 14 Jul 2022 14:16:42 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/windows/2022-07-14/%EB%AA%85%EB%A0%B4%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EA%B4%80%EB%A6%AC%EC%9E%90%EC%8B%A4%ED%96%89/</guid><description>명령 프롬프트(cmd)는 Windows OS에서 명령을 실행하는 데 사용되는 명령줄 인터페이스이다. 해당 인터페이스는 관리자 권한이 필요한 작업을 수행해야 하는 경우가 있다. 이를 위해서는 특별히 cmd관리자로 열어야 한다.
-이 작업을 수행하는 두 가지 방법은 아래와 같다.
-검색 cmd Windows 검색창에서 cmd 입력 후 명령 프롬프트 앱이 나타나면 우클릭 &amp;gt; 관리자 권한으로 실행 Run 명령으로 실행 시 Window key + R 입력 후 실행 창이 나타나면 cmd 입력 후 Ctrl + Shift + Enter를 입력하여 명령 프롬프트 관리자로 열기</description></item><item><title>Procedure</title><link>https://rlawjddbs.github.io/posts/oracle/2022-06-29/procedure/</link><pubDate>Wed, 29 Jun 2022 11:02:42 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/oracle/2022-06-29/procedure/</guid><description>Procedure CREATE [OR REPLACE] PROCEDURE 프로시저명 (변수명 [IN/OUT] 데이터형, ...) IS 변수선언 BEGIN 코드작성 END; / IN: in parameter, 외부값(내부, 값을 저장 X) OUT: out parameter, 내부값(외부, 값을 저장 O) Cursor CURSOR 커서명 IS SELECT ZIPCODE, ... FROM ZIPCODE WHERE DONG LIKE I_DONG% -- error 단지 연산만 할거라면 함수를 쓰고, 쿼리까지 사용해야 한다면 프로시저를 사용한다.
-Package 관련있는 function, procedure를 묶어 관리하는 객체 header와 body로 구성 user_procedures 테이블에서 조회가능 package로 묶여있는 function, procedure를 호출할 떄 header: package에 포함될 function, procedure의 목록 정의(body가 없으면 일을 할 수 없다.</description></item><item><title>Maven Dependency scope</title><link>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</link><pubDate>Fri, 24 Jun 2022 11:33:12 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</guid><description>compile 컴파일 할 경우 필요 runtime 런타임 때 필요 provided 컴파일 때 필요하긴 하지만 런타임 때는 JDK, 또는 컨테이너가 제공 서블릿이나 JSP 관련 API 같은 것 즉 WAS에서 제공하는 servlet-api.jar를 사용하는 경우에 해당 만약 운영환경에서 servlet-api.jar 중복으로 인한 문제가 발생한다면 꼭 provided로 바꿔줘야 함 system system은 provided와 유사하지만 JAR 파일을 직접 사용 이 때는 JAR 파일의 위치를 지정하는 systemPath 속성을 지정해야함!!! ex(pom.xml) ... &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;...&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;...&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;...&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;...&amp;lt;/scope&amp;gt; &amp;lt;systemPath&amp;gt;...&amp;lt;/systemPath&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; .</description></item><item><title>Github pages 변경</title><link>https://rlawjddbs.github.io/posts/hugo/2022-05-20/hugo_deploy_to_github/</link><pubDate>Fri, 20 May 2022 21:11:27 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/hugo/2022-05-20/hugo_deploy_to_github/</guid><description>1. Github 프로젝트 생성 Project name: 닉네임.github.io gitlab은 private 가능한데 github는 public으로 해야 pages 설정이 가능하다.. 무료 사용자 기준 2. hugo 설치 참고 사이트 hugo official - 휴고 공식 사이트
-homebrew를 이용하여 설치한다.
-brew install hugo 3. hugo로 새 사이트 만들기 hugo 설치 완료 후 사이트를 배포하고 싶은 디렉토리를 생성하고 해당 디렉토리로 이동 후
-hugo new site 생성할사이트명 -f yml 여기서 -f yml 옵션은 선택적인 것인데 설정 파일을 .yml 포맷으로 쓰겠다는 뜻이다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on dbs blog</title><link>https://rlawjddbs.github.io/posts/</link><description>Recent content in Posts on dbs blog</description><generator>Hugo -- 0.136.5</generator><language>en-us</language><lastBuildDate>Mon, 28 Oct 2024 11:37:34 +0900</lastBuildDate><atom:link href="https://rlawjddbs.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Reasons_for_use_react</title><link>https://rlawjddbs.github.io/posts/react/2024-10-28/reasons_for_use_react/</link><pubDate>Mon, 28 Oct 2024 11:37:34 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/react/2024-10-28/reasons_for_use_react/</guid><description>&lt;p>뭐고 이게&lt;/p></description></item><item><title>Lifecycle과 useEffect1</title><link>https://rlawjddbs.github.io/posts/react/2024-05-09/lifecycle_of_react_component/</link><pubDate>Thu, 09 May 2024 08:56:55 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/react/2024-05-09/lifecycle_of_react_component/</guid><description>&lt;h2 id="컴포넌트의-라이프사이클">컴포넌트의 라이프사이클&lt;/h2>
+&lt;ul>
+&lt;li>컴포넌트는 사람처럼 태어나고 죽음&lt;/li>
+&lt;li>상세 페이지로 이동 시 Detail 컴포넌트가 보인다
+&lt;ul>
+&lt;li>페이지에 장착되기도 하고(mount)&lt;/li>
+&lt;li>가끔 업데이트도 되고(update)&lt;/li>
+&lt;li>메인 페이지로 이동 시 필요없으면 제거된다(unmount)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="라이프사이클을-알아야-하는-이유">라이프사이클을 알아야 하는 이유&lt;/h2>
+&lt;ul>
+&lt;li>위 표기된 라이프사이클 중간중간에 간섭을 할 수 있음
+&lt;ul>
+&lt;li>라이프사이클 중간중간 코드실행가능&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="라이프사이클훅">라이프사이클훅&lt;/h2>
+&lt;ul>
+&lt;li>컴포넌트 라이프사이클에 갈고리를 건다고 연상하면 이해가 쉬움&lt;/li>
+&lt;li>훅에 실행할코드를 담아 라이프사이클에 훅을 건다 생각하면 쉬움&lt;/li>
+&lt;/ul>
+&lt;h2 id="컴포넌트에-갈고리-다는-법">컴포넌트에 갈고리 다는 법&lt;/h2>
+&lt;h3 id="클래스-방식">클래스 방식&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Detail&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">componentDidMount&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">componentDidUpdate&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">componentWillUnmount&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="함수방식">함수방식&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">useEffect&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">Detail&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">useEffect&lt;/span>(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// mount, update 시 여기 코드 실행됨
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;h3 id="q-컴포넌트-렌더링-시-내부-함수-실행되는데-라이프-사이클-쓰는-이유">Q. 컴포넌트 렌더링 시 내부 함수 실행되는데 라이프 사이클 쓰는 이유&lt;/h3>
+&lt;h4 id="a-라이프사이클훅-내부의-코드는-html-렌더링-후에-동작함">A. 라이프사이클훅 내부의 코드는 html 렌더링 후에 동작함&lt;/h4>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;h3 id="q-왜-이름이-effect-인지">Q. 왜 이름이 Effect~~ 인지&lt;/h3>
+&lt;h4 id="side-effect-함수의-핵심기능과-상관없는-부가기능-여기에서-따온-이름">Side Effect: 함수의 핵심기능과 상관없는 부가기능. 여기에서 따온 이름&lt;/h4>
+&lt;/blockquote>
+&lt;h2 id="useeffect-안에-적는-코드들은">useEffect 안에 적는 코드들은&lt;/h2>
+&lt;ul>
+&lt;li>어려운 연산&lt;/li>
+&lt;li>서버에서 데이터가져오는 작업&lt;/li>
+&lt;li>타이머 장착하는거&lt;/li>
+&lt;/ul></description></item><item><title>PL/SQL1-변수, 연산자, 제어문</title><link>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</link><pubDate>Wed, 27 Jul 2022 13:53:00 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</guid><description>&lt;h1 id="plsql">PL/SQL&lt;/h1>
+&lt;ul>
+&lt;li>&lt;code>Procedural Language&lt;/code>&lt;/li>
+&lt;li>&lt;code>DBMS&lt;/code>에서 제공하는 언어적인 요소&lt;/li>
+&lt;/ul>
+&lt;h2 id="1-작성구조">1. 작성구조&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-SQL" data-lang="SQL">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">DECLARE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">변수선언&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">BEGIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">코드작성&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">END&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">/&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>PL/SQL 코드의 끝은 항상 슬래쉬&lt;code>/&lt;/code>로 끝이 나야함&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-저장-형식">2. 저장 형식&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>파일명.sql&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-실행">3. 실행&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>cmd/편집기&lt;/code> → &lt;code>@파일명.sql&lt;/code>
+&lt;ul>
+&lt;li>error 발생: 왜?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="4-화면출력">4. 화면출력&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-SQL" data-lang="SQL">&lt;span style="display:flex;">&lt;span>sqlplus &lt;span style="color:#75715e">-- 계정연결
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">set&lt;/span> serveroutput &lt;span style="color:#66d9ef">on&lt;/span> &lt;span style="color:#75715e">-- 출력설정
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>dbms_output.put_line(&lt;span style="color:#960050;background-color:#1e0010">출력할&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">내용&lt;/span>); &lt;span style="color:#75715e">-- 출력 후 줄 변경
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>dbms_output.put(&lt;span style="color:#960050;background-color:#1e0010">출력할&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">내용&lt;/span>) &lt;span style="color:#75715e">-- 출력 후 줄 변경 X
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>출력할 내용에는 변수, 문자열, 연산식, &amp;lsquo;문자열&amp;rsquo; 등등이 들어감&lt;/li>
+&lt;/ul></description></item><item><title>MyBatis에서 오라클 Procedure, Function 호출 및 반환값 받기</title><link>https://rlawjddbs.github.io/posts/mybatis/2022-07-21/mybatis_with_oracle_procedure_and_function/</link><pubDate>Thu, 21 Jul 2022 19:03:31 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/mybatis/2022-07-21/mybatis_with_oracle_procedure_and_function/</guid><description>&lt;p>[&lt;a href="https://rlawjddbs.github.io/posts/oracle/2022-06-29/procedure/">&lt;strong>프로시저에 대한 약식 설명&lt;/strong>&lt;/a>]&lt;/p>
+&lt;h1 id="1-프로시저-생성하기">1. 프로시저 생성하기&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-SQL" data-lang="SQL">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">create&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> &lt;span style="color:#66d9ef">replace&lt;/span> (EDITIONABLE&lt;span style="color:#f92672">||&lt;/span>NONEDITIONABLE) &lt;span style="color:#66d9ef">PROCEDURE&lt;/span> GET_CODE_LIST (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IN_PARAM &lt;span style="color:#66d9ef">IN&lt;/span> &lt;span style="color:#66d9ef">CLOB&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> OUT_CURSOR &lt;span style="color:#66d9ef">OUT&lt;/span> SYS_REFCURSOR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">IS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> P_GRP_CD VARCHAR(&lt;span style="color:#ae81ff">30&lt;/span>) :&lt;span style="color:#f92672">=&lt;/span> JSON_VALUE(IN_PARAM, &lt;span style="color:#e6db74">&amp;#39;$.GRP_CD&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">BEGIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">OPEN&lt;/span> OUT_CURSOR &lt;span style="color:#66d9ef">FOR&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">SELECT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DATA_CD,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DATA_NM,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GRP_CD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">FROM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SYS_CD_MGMT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">WHERE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GRP_CD &lt;span style="color:#f92672">=&lt;/span> P_GRP_CD;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">END&lt;/span> GET_CODE_LIST;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>EDITIONABLE || NONEDITIONABLE 옵션:&lt;/li>
+&lt;/ul></description></item><item><title>Procedure</title><link>https://rlawjddbs.github.io/posts/oracle/2022-06-29/procedure/</link><pubDate>Wed, 29 Jun 2022 11:02:42 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/oracle/2022-06-29/procedure/</guid><description>&lt;h1 id="procedure">Procedure&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-SQL" data-lang="SQL">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> [&lt;span style="color:#66d9ef">OR&lt;/span> &lt;span style="color:#66d9ef">REPLACE&lt;/span>] &lt;span style="color:#66d9ef">PROCEDURE&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">프로시저명&lt;/span> (&lt;span style="color:#960050;background-color:#1e0010">변수명&lt;/span> [&lt;span style="color:#66d9ef">IN&lt;/span>&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#66d9ef">OUT&lt;/span>] &lt;span style="color:#960050;background-color:#1e0010">데이터형&lt;/span>, ...)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">IS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">변수선언&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">BEGIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">코드작성&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">END&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">/&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>IN&lt;/code>: in parameter, 외부값(내부, 값을 저장 X)&lt;/li>
+&lt;li>&lt;code>OUT&lt;/code>: out parameter, 내부값(외부, 값을 저장 O)&lt;/li>
+&lt;/ul>
+&lt;h1 id="cursor">Cursor&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-SQL" data-lang="SQL">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CURSOR&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">커서명&lt;/span> &lt;span style="color:#66d9ef">IS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">SELECT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ZIPCODE,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">FROM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ZIPCODE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">WHERE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DONG &lt;span style="color:#66d9ef">LIKE&lt;/span> I_DONG&lt;span style="color:#f92672">%&lt;/span> &lt;span style="color:#75715e">-- error
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>단지 연산만 할거라면 함수를 쓰고, 쿼리까지 사용해야 한다면 프로시저를 사용한다.&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="package">Package&lt;/h1>
+&lt;ul>
+&lt;li>관련있는 &lt;code>function&lt;/code>, &lt;code>procedure&lt;/code>를 묶어 관리하는 객체&lt;/li>
+&lt;li>&lt;code>header&lt;/code>와 &lt;code>body&lt;/code>로 구성&lt;/li>
+&lt;li>&lt;code>user_procedures&lt;/code> 테이블에서 조회가능&lt;/li>
+&lt;li>package로 묶여있는 function, procedure를 호출할 떄&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;ul>
+&lt;li>header: &lt;code>package&lt;/code>에 포함될 &lt;code>function&lt;/code>, &lt;code>procedure&lt;/code>의 목록 정의(&lt;code>body&lt;/code>가 없으면 일을 할 수 없다.)&lt;/li>
+&lt;li>body: &lt;code>header&lt;/code>에 포함된 &lt;code>function&lt;/code>, &lt;code>procedure&lt;/code>의 실제 동작되는 코드를 정의&lt;/li>
+&lt;/ul>
+&lt;/blockquote></description></item><item><title>Maven Dependency scope</title><link>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</link><pubDate>Fri, 24 Jun 2022 11:33:12 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/maven/2022-06-24/maven_scope/</guid><description>&lt;h2 id="compile">compile&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>컴파일&lt;/code> 할 경우 필요&lt;/li>
+&lt;/ul>
+&lt;h2 id="runtime">runtime&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>런타임&lt;/code> 때 필요&lt;/li>
+&lt;/ul>
+&lt;h2 id="provided">provided&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>컴파일&lt;/code> 때 필요하긴 하지만 &lt;code>런타임&lt;/code> 때는 &lt;code>JDK&lt;/code>, 또는 &lt;code>컨테이너&lt;/code>가 제공&lt;/li>
+&lt;li>&lt;code>서블릿&lt;/code>이나 &lt;code>JSP 관련 API&lt;/code> 같은 것&lt;/li>
+&lt;li>즉 &lt;code>WAS&lt;/code>에서 제공하는 &lt;code>servlet-api.jar&lt;/code>를 사용하는 경우에 해당&lt;/li>
+&lt;li>만약 &lt;code>운영환경&lt;/code>에서 servlet-api.jar 중복으로 인한 문제가 발생한다면 꼭 &lt;code>provided&lt;/code>로 바꿔줘야 함&lt;/li>
+&lt;/ul>
+&lt;h2 id="system">system&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>system&lt;/code>은 provided와 유사하지만 &lt;strong>&lt;code>JAR 파일&lt;/code>을 직접 사용&lt;/strong>&lt;/li>
+&lt;li>이 때는 JAR 파일의 위치를 지정하는 systemPath 속성을 지정해야함!!!&lt;/li>
+&lt;/ul>
+&lt;h3 id="expomxml">ex(pom.xml)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Github pages 변경</title><link>https://rlawjddbs.github.io/posts/hugo/2022-05-20/hugo_deploy_to_github/</link><pubDate>Fri, 20 May 2022 21:11:27 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/hugo/2022-05-20/hugo_deploy_to_github/</guid><description>&lt;h1 id="1-github-프로젝트-생성">1. Github 프로젝트 생성&lt;/h1>
+&lt;p>&lt;img alt="Github 프로젝트 생성" src="https://rlawjddbs.github.io/posts/Hugo/2022-05-20/images/create.png">&lt;/p>
+&lt;ul>
+&lt;li>Project name: &lt;code>닉네임&lt;/code>.github.io
+gitlab은 private 가능한데 github는 public으로 해야 pages 설정이 가능하다.. 무료 사용자 기준&lt;/li>
+&lt;/ul>
+&lt;h1 id="2-hugo-설치">2. hugo 설치&lt;/h1>
+&lt;p>참고 사이트
+&lt;a href="https://hugo.io">hugo official&lt;/a> - 휴고 공식 사이트&lt;br>
+&lt;code>homebrew&lt;/code>를 이용하여 설치한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="3-hugo로-새-사이트-만들기">3. hugo로 새 사이트 만들기&lt;/h1>
+&lt;p>hugo 설치 완료 후 사이트를 배포하고 싶은 디렉토리를 생성하고 해당 디렉토리로 이동 후&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>hugo new site 생성할사이트명 -f yml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>여기서 &lt;code>-f yml&lt;/code> 옵션은 선택적인 것인데 설정 파일을 &lt;code>.yml&lt;/code> 포맷으로 쓰겠다는 뜻이다. 안쓰면 그냥 &lt;code>.toml&lt;/code> 형식을 씀.&lt;/p></description></item></channel></rss>
