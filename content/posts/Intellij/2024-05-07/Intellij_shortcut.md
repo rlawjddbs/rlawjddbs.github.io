@@ -5,11 +5,11 @@ draft: true
 categories: ["Intellij"]
 tags: ["Intellij"]
 ---
-
+aa
 ## Mac OS 인텔리제이 단축키 모음
 아래 작성된 단축키의 대부분은 윈도우의 경우 Command = Ctrl, Option = Alt 키로
-대체하여 사용될 수 있습니다. 최초 윈도우 환경에 맞춰 사용되다 Mac OS로 개발환경을 바꾸었기
-때문에 검증되지 않은 단축키가 있을 수 있습니다.
+대체하여 사용될 수 있고 최초 윈도우 환경에 맞춰 사용되다 Mac OS로 개발환경을 바꾸었기
+때문에 검증되지 않은 단축키가 있을 수 있음...
 - `Option + Shift + 방향키` 줄내렸다올렸다
 - `Command + D` 한줄복사
 - `Command + Y` / `Shift + Del` 한줄삭제
