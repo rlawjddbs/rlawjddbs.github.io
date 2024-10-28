@@ -48,6 +48,7 @@ params:
   author: Me
   defaultTheme: auto
   disableThemeToggle: false
+  social: true
 
   ShowReadingTime: true
   ShowShareButtons: true
