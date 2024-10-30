@@ -5,8 +5,7 @@ draft: true
 categories: ["React"]
 tags: ["React"]
 ---
-
-# React 왜쓰는지?
+# React를 사용하는 이유
 ## 1. Single Page Application 만들 때 사용한다
 `바닐라 JS`로도 가능하긴 한데 코드가 길고 복잡해진다. 또한 `Vue`, `Svelte`, `Preact`, 
 `SolidJS`등 `React`와 비슷한 라이브러리들은 많지만 React 라이브러리가 유저가 가장 많다.
