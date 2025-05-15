@@ -1,7 +1,9 @@
 ---
 title: "Lifecycle과 useEffect1"
 date: 2024-05-09T08:56:55+09:00
-draft: false
+draft: true
+categories: ["React"]
+tags: ["React", "라이프사이클", "Lifecycle", "useEffect"]
 ---
 ## 컴포넌트의 라이프사이클
 - 컴포넌트는 사람처럼 태어나고 죽음
