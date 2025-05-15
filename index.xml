@@ -1,62 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>dbs blog</title><link>https://rlawjddbs.github.io/</link><description>Recent content on dbs blog</description><generator>Hugo -- 0.145.0</generator><language>en-us</language><lastBuildDate>Tue, 29 Oct 2024 15:49:29 +0900</lastBuildDate><atom:link href="https://rlawjddbs.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>리액트 설치하기</title><link>https://rlawjddbs.github.io/posts/react/2022-10-29/installing_react/</link><pubDate>Tue, 29 Oct 2024 15:49:29 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/react/2022-10-29/installing_react/</guid><description>&lt;h1 id="1-nvm-설치">1. NVM 설치&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>dbs blog</title><link>https://rlawjddbs.github.io/</link><description>Recent content on dbs blog</description><generator>Hugo -- 0.147.3</generator><language>en-us</language><lastBuildDate>Wed, 06 Nov 2024 12:21:15 +0900</lastBuildDate><atom:link href="https://rlawjddbs.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Add_markdown_expression</title><link>https://rlawjddbs.github.io/posts/hugo/2024-11-06/add_markdown_expression/</link><pubDate>Wed, 06 Nov 2024 12:21:15 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/hugo/2024-11-06/add_markdown_expression/</guid><description>&lt;h1 id="블로그에-detail-요소-사용할-수-있게-추가하기">블로그에 &amp;lt;detail&amp;gt; 요소 사용할 수 있게 추가하기&lt;/h1>
+&lt;p>어찌된 영문인지 github markdown 에서는 &lt;code>&amp;lt;detail&amp;gt;&lt;/code>을 사용할 수 있었는데 &lt;code>hugo blog&lt;/code>
+에서는 사용이 되지 않는다. &lt;code>stack overflow&lt;/code>에서 검색좀 해보니 hugo에서는 따로 표현식을
+허용하는 과정이 필요했다.&lt;/p>
+&lt;h1 id="detailshtml-추가하기">details.html 추가하기&lt;/h1>
+&lt;p>&lt;code>layouts/shortcodes/&lt;/code> 디렉토리 내부에 &lt;code>details.html&lt;/code> 파일을 추가한다.
+추가한 파일에 아래 내용을 추가한다.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">details&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">summary&lt;/span>&amp;gt;{{ (.&lt;span style="color:#a6e22e">Get&lt;/span> &lt;span style="color:#e6db74">&amp;#34;title&amp;#34;&lt;/span>) &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#e6db74">&amp;#34;펼침&amp;#34;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#a6e22e">markdownify&lt;/span> }}&amp;lt;/&lt;span style="color:#f92672">summary&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;{{ .&lt;span style="color:#a6e22e">Inner&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#a6e22e">markdownify&lt;/span> }}&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">details&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>.Get &amp;quot;title&amp;quot;&lt;/code>은 &lt;code>&amp;lt;detail&amp;gt;&lt;/code>태그의 &lt;code>title&lt;/code>속성값을 &lt;code>&amp;lt;summary&amp;gt;&lt;/code>태그 내용으로 사용
+함을 의미한다.&lt;/p></description></item><item><title>리액트 설치하기</title><link>https://rlawjddbs.github.io/posts/react/2022-10-29/installing_react/</link><pubDate>Tue, 29 Oct 2024 15:49:29 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/react/2022-10-29/installing_react/</guid><description>&lt;h1 id="1-nvm-설치">1. NVM 설치&lt;/h1>
 &lt;p>React와 같은 웹 UI 라이브러리를 사용하는 데 Node.js가 필수인 것은 아니다. 별도의 설치 없이도 충분히 개발은 할 수 있다. 그러나 프로젝트가 커지고 복잡해지다 보면 순수 React만으로는 부족해지는 순간이 온다. 프로젝트의 성능 때문일 수도 있고, 개발자 경험을 위해서일 수도 있다.&lt;/p>
-&lt;p>필요한 라이브러리가 브라우저 상에서 동작하는 것이 아니라 CLI로 실행시켜야 할 수도 있다. 그럴때 Node.js가 필요해진다. 다양한 노드 버전은 nvm을 설치후 적절하게 골라가며 사용가능하고 노드로 만들어진 모듈은 npm을 통해 패키지를 설치하고 실행할 수 있다.&lt;/p></description></item><item><title>Lifecycle과 useEffect1</title><link>https://rlawjddbs.github.io/posts/react/2024-05-09/lifecycle_of_react_component/</link><pubDate>Thu, 09 May 2024 08:56:55 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/react/2024-05-09/lifecycle_of_react_component/</guid><description>&lt;h2 id="컴포넌트의-라이프사이클">컴포넌트의 라이프사이클&lt;/h2>
-&lt;ul>
-&lt;li>컴포넌트는 사람처럼 태어나고 죽음&lt;/li>
-&lt;li>상세 페이지로 이동 시 Detail 컴포넌트가 보인다
-&lt;ul>
-&lt;li>페이지에 장착되기도 하고(mount)&lt;/li>
-&lt;li>가끔 업데이트도 되고(update)&lt;/li>
-&lt;li>메인 페이지로 이동 시 필요없으면 제거된다(unmount)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="라이프사이클을-알아야-하는-이유">라이프사이클을 알아야 하는 이유&lt;/h2>
-&lt;ul>
-&lt;li>위 표기된 라이프사이클 중간중간에 간섭을 할 수 있음
-&lt;ul>
-&lt;li>라이프사이클 중간중간 코드실행가능&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="라이프사이클훅">라이프사이클훅&lt;/h2>
-&lt;ul>
-&lt;li>컴포넌트 라이프사이클에 갈고리를 건다고 연상하면 이해가 쉬움&lt;/li>
-&lt;li>훅에 실행할코드를 담아 라이프사이클에 훅을 건다 생각하면 쉬움&lt;/li>
-&lt;/ul>
-&lt;h2 id="컴포넌트에-갈고리-다는-법">컴포넌트에 갈고리 다는 법&lt;/h2>
-&lt;h3 id="클래스-방식">클래스 방식&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Detail&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">componentDidMount&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">componentDidUpdate&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">componentWillUnmount&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="함수방식">함수방식&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">useEffect&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">Detail&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">useEffect&lt;/span>(() =&amp;gt; {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// mount, update 시 여기 코드 실행됨
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;h3 id="q-컴포넌트-렌더링-시-내부-함수-실행되는데-라이프-사이클-쓰는-이유">Q. 컴포넌트 렌더링 시 내부 함수 실행되는데 라이프 사이클 쓰는 이유&lt;/h3>
-&lt;h4 id="a-라이프사이클훅-내부의-코드는-html-렌더링-후에-동작함">A. 라이프사이클훅 내부의 코드는 html 렌더링 후에 동작함&lt;/h4>&lt;/blockquote>
-&lt;blockquote>
-&lt;h3 id="q-왜-이름이-effect-인지">Q. 왜 이름이 Effect~~ 인지&lt;/h3>
-&lt;h4 id="side-effect-함수의-핵심기능과-상관없는-부가기능-여기에서-따온-이름">Side Effect: 함수의 핵심기능과 상관없는 부가기능. 여기에서 따온 이름&lt;/h4>&lt;/blockquote>
-&lt;h2 id="useeffect-안에-적는-코드들은">useEffect 안에 적는 코드들은&lt;/h2>
-&lt;ul>
-&lt;li>어려운 연산&lt;/li>
-&lt;li>서버에서 데이터가져오는 작업&lt;/li>
-&lt;li>타이머 장착하는거&lt;/li>
-&lt;/ul></description></item><item><title>PL/SQL1-변수, 연산자, 제어문</title><link>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</link><pubDate>Wed, 27 Jul 2022 13:53:00 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</guid><description>&lt;h1 id="plsql">PL/SQL&lt;/h1>
+&lt;p>필요한 라이브러리가 브라우저 상에서 동작하는 것이 아니라 CLI로 실행시켜야 할 수도 있다. 그럴때 Node.js가 필요해진다. 다양한 노드 버전은 nvm을 설치후 적절하게 골라가며 사용가능하고 노드로 만들어진 모듈은 npm을 통해 패키지를 설치하고 실행할 수 있다.&lt;/p></description></item><item><title>PL/SQL1-변수, 연산자, 제어문</title><link>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</link><pubDate>Wed, 27 Jul 2022 13:53:00 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/oracle/2022-07-27/plsql/</guid><description>&lt;h1 id="plsql">PL/SQL&lt;/h1>
 &lt;ul>
 &lt;li>&lt;code>Procedural Language&lt;/code>&lt;/li>
 &lt;li>&lt;code>DBMS&lt;/code>에서 제공하는 언어적인 요소&lt;/li>
@@ -184,8 +140,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Github pages 변경</title><link>https://rlawjddbs.github.io/posts/hugo/2022-05-20/hugo_deploy_to_github/</link><pubDate>Fri, 20 May 2022 21:11:27 +0900</pubDate><guid>https://rlawjddbs.github.io/posts/hugo/2022-05-20/hugo_deploy_to_github/</guid><description>&lt;h1 id="1-github-프로젝트-생성">1. Github 프로젝트 생성&lt;/h1>
-&lt;p>&lt;img loading="lazy" src="https://rlawjddbs.github.io/posts/Hugo/2022-05-20/images/create.png" alt="Github 프로젝트 생성" />
-&lt;/p>
+&lt;p>&lt;img alt="Github 프로젝트 생성" loading="lazy" src="https://rlawjddbs.github.io/posts/Hugo/2022-05-20/images/create.png">&lt;/p>
 &lt;ul>
 &lt;li>Project name: &lt;code>닉네임&lt;/code>.github.io
 gitlab은 private 가능한데 github는 public으로 해야 pages 설정이 가능하다.. 무료 사용자 기준&lt;/li>
