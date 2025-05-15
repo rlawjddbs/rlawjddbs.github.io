@@ -81,7 +81,7 @@
     {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},
     {{- end}}
   {{- else }}
-    {{ define "partials/templates/_funcs/get-page-images" }}{{ end }}
+    {{- define "partials/templates/_funcs/get-page-images" }}{{- end }}
     {{- $images := partial "partials/templates/_funcs/get-page-images" . -}}
     {{- with index $images 0 -}}
   "image": {{ .Permalink }},

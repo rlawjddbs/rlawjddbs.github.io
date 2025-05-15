@@ -3,7 +3,6 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 {{- if .Params.cover.image -}}
-{{ define "partials/templates/_funcs/get-page-images" }}{{ end }}
 {{- if (ne .Params.cover.relative true) }}
 <meta property="og:image" content="{{ .Params.cover.image | absURL }}" />
 {{- else}}
@@ -11,6 +10,7 @@
 {{- end}}
 {{- else }}
 
+{{- define "partials/templates/_funcs/get-page-images" }}{{- end }}
 {{- $images := partial "partials/templates/_funcs/get-page-images" . -}}
 {{- range first 6 $images }}
 <meta property="og:image" content="{{ .Permalink }}" />
