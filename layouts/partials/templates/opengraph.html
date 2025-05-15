@@ -2,8 +2,8 @@
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-{{ define "partials/templates/_funcs/get-page-images" }}{{ end }}
 {{- if .Params.cover.image -}}
+{{ define "partials/templates/_funcs/get-page-images" }}{{ end }}
 {{- if (ne .Params.cover.relative true) }}
 <meta property="og:image" content="{{ .Params.cover.image | absURL }}" />
 {{- else}}
