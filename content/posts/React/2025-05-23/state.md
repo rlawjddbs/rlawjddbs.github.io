@@ -113,3 +113,6 @@ state 자료를 사용한다면
 그럴 필요가 없다.   
 개발자가 재렌더링 소스코드를 작성하지 않아도 자동으로
 html도 바뀐다. state는 변경이 일wq:어나면 state가 포함된 html을 자동으로 재렌더링 해줘서 그렇다.
+
+# 숙제
+![숙제](https://github.com/rlawjddbs/rlawjddbs.github.io/blob/9991a24b5a2cca7aab07aed712b6dc857bb78b4e/content/posts/React/imgs/IMG_C1783B056DC4-1.jpeg)
