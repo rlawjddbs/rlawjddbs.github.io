@@ -1,5 +1,5 @@
 ---
-title: "리액트 설치하기 (1)"
+title: "리액트 React 설치와 개발환경 셋팅(舊)"
 date: 2024-10-29T15:49:29+09:00
 draft: true
 categories: ["React"]

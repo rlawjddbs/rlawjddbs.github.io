@@ -1,10 +1,12 @@
 ---
-title: "리액트 설치하기 (2)"
+title: "리액트 React 설치와 개발환경 셋팅(新)"
 date: 2024-10-30T15:49:29+09:00
 draft: true
 categories: ["React"]
-tags: ["React", "리액트", "설치"]
+tags: ["React", "리액트", "설치", "vite 사용"]
 ---
+
+**[정리]** vite를 사용하여 
 # 1. Node 프로젝트 생성하기
 `ESM`방식의 번들러인 `Vite`를 사용하여 리액트 프로젝트 빌드 시도
 ```bash
@@ -94,6 +96,5 @@ npm run dev
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
   ➜  press h + enter to show help
-
 ```
 
