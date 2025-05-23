@@ -122,9 +122,9 @@ html도 바뀐다. state는 변경이 일wq:어나면 state가 포함된 html을
 function App() {
 
     const [posts, setPosts] = useState([
-        {title: '강남 우동 맛집', content: '모름', likes: 0},
-        {title: '남자 코트 추천', content:'본문', likes: 0},
-        {title: '글제목', content:'신남', likes: 0}
+        {title: '남자 코트 추천', content:'본문'},
+        {title: '강남 우동 맛집', content: '모름'},
+        {title: '글제목', content:'신남'}
     ]);
 
     return (
@@ -136,17 +136,7 @@ function App() {
                 posts.map((item, index) => {
                     return (
                         <div className="list" key={index}>
-                            <h4>
-                                {item.title}
-                                <span>
-                                    <button onClick={() => {
-                                        const copyPosts = [...posts];
-                                        copyPosts[index].likes += 1;
-                                        setPosts(copyPosts);
-                                    }}>👍</button>
-                                    {item.likes}
-                                </span>
-                            </h4>
+                            <h4>{item.title}</h4>
                             <p>{item.content}</p>
                         </div>
                     )
