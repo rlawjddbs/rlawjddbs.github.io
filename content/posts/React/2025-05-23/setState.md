@@ -70,7 +70,7 @@ function App(){
 그럼 버튼을 누를 때 마다 그 값으로 대체된다.
 
 # 숙제
-![숙제](https://github.com/rlawjddbs/rlawjddbs.github.io/blob/9991a24b5a2cca7aab07aed712b6dc857bb78b4e/content/posts/React/imgs/IMG_023257120684-1.jpeg)
+![숙제](https://github.com/rlawjddbs/rlawjddbs.github.io/blob/9108453b64e7a5581221c8f1689a4624e2f09096/content/posts/React/imgs/IMG_023257120684-1.jpeg)
 
 ### 숙제 결과
 ```jsx
