@@ -87,21 +87,19 @@ function App() {
             <div className="black-nav">
                 <h4>ReactBlog</h4>
             </div>
+
+            <button style={{'float': 'right'}} onClick={() => {
+                const copyPosts = [...posts];
+                copyPosts[index].title = '여자 코트 추천';
+                setPosts(copyPosts);
+            }}>제목 수정</button>
+            
             {
                 posts.map((item, index) => {
                     return (
                         <div className="list" key={index}>
                             <h4>{item.title}</h4>
                             <p>{item.content}</p>
-                            {
-                                0 === index
-                                    ? <button style={{'float': 'right'}} onClick={() => {
-                                        const copyPosts = [...posts];
-                                        copyPosts[index].title = '여자 코트 추천';
-                                        setPosts(copyPosts);
-                                    }}>제목 수정</button>
-                                    : null
-                            }
                         </div>
                     )
                 })
@@ -110,5 +108,3 @@ function App() {
     )
 }
 ```
-- jsx return문 내부에 if 문을 사용할 수 없다고 한다(!!!)
-- 따라서 삼항연산자를 써야한다.

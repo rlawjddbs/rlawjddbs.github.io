@@ -198,15 +198,18 @@ copy라는 변수가 기존 state와 같아서 변경을 안해준 것이다.
 
 # 숙제
 ![숙제](https://github.com/rlawjddbs/rlawjddbs.github.io/blob/9991a24b5a2cca7aab07aed712b6dc857bb78b4e/content/posts/React/imgs/IMG_023257120684-1.jpeg)
+버튼누르면 글제목이 가나다순으로 정렬되는 기능을 만들어보자.  
+html을 어떻게 정렬할까 고민안해도 되고 글제목 state를 가나다순으로 정렬만 하면된다.  
+왜냐면 state 변경하면 관련된 html은 자동으로 재렌더링 되기때문이다.
 
 ### 숙제 결과
 ```jsx
 function App() {
 
     const [posts, setPosts] = useState([
-        {title: '강남 우동 맛집', content: '모름', likes: 0},
-        {title: '남자 코트 추천', content:'본문', likes: 0},
-        {title: '글제목', content:'신남', likes: 0}
+        {title: '강남 우동 맛집', content: '모름'},
+        {title: '남자 코트 추천', content:'본문'},
+        {title: '글제목', content:'신남'}
     ]);
 
     return (
@@ -214,6 +217,23 @@ function App() {
             <div className="black-nav">
                 <h4>ReactBlog</h4>
             </div>
+
+            <button onClick={() => {
+                const copyPosts = [...posts];
+                copyPosts.sort((a, b) => {
+                    if (a.title > b.title) return 1;
+                    if (a.title < b.title) return -1;
+                    return 0;
+                });
+                setPosts(copyPosts);
+            }}>가나다순 정렬</button>
+
+            <button style={{'float': 'right'}} onClick={() => {
+                const copyPosts = [...posts];
+                copyPosts[index].title = '여자 코트 추천';
+                setPosts(copyPosts);
+            }}>제목 수정</button>
+            
             {
                 posts.map((item, index) => {
                     return (
